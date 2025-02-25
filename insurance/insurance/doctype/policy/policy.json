@@ -1,0 +1,214 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format: PLC-{#####}",
+ "creation": "2025-02-18 11:05:56.062192",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "policy_name",
+  "policy_no___endorsement_no",
+  "insurance_types",
+  "description",
+  "column_break_udhu",
+  "insurance_company",
+  "previous_policy_no",
+  "period_from",
+  "period_to",
+  "renew",
+  "section_break_rptk",
+  "insured_name",
+  "insured_address",
+  "total_sum_insured",
+  "column_break_8k7p",
+  "details",
+  "final_total_premium",
+  "section_break_o0ss",
+  "reminder_1",
+  "reminder1_before_days",
+  "reminder_2",
+  "reminder2_before_days",
+  "reminder_3",
+  "reminder3_before_days",
+  "column_break_0uv2",
+  "recipients"
+ ],
+ "fields": [
+  {
+   "fieldname": "policy_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Policy Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "column_break_udhu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "insurance_company",
+   "fieldtype": "Link",
+   "label": "Insurance Company",
+   "options": "Insurance Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_o0ss",
+   "fieldtype": "Section Break",
+   "label": "Reminder"
+  },
+  {
+   "fieldname": "recipients",
+   "fieldtype": "Table MultiSelect",
+   "label": "Recipients",
+   "mandatory_depends_on": "eval: (doc.reminder_1 == 1) || (doc.reminder_2 == 1) || (doc.reminder_3 == 1)",
+   "options": "Insurance User"
+  },
+  {
+   "fieldname": "column_break_0uv2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "policy_no___endorsement_no",
+   "fieldtype": "Data",
+   "label": "Policy No. /  Endorsement No."
+  },
+  {
+   "fieldname": "previous_policy_no",
+   "fieldtype": "Data",
+   "label": "Previous Policy No."
+  },
+  {
+   "fieldname": "insured_name",
+   "fieldtype": "Select",
+   "label": "Insured Name",
+   "options": "\nMANTRA SOFTECH INDIA PRIVATE LIMITED\nMEFRON TECHNOLOGIES INDIA PRIVATE LIMITED\nMEWURK TECHNOLOGIES PRIVATE LIMITED"
+  },
+  {
+   "fieldname": "insured_address",
+   "fieldtype": "Small Text",
+   "label": "Insured Address"
+  },
+  {
+   "fieldname": "details",
+   "fieldtype": "Small Text",
+   "label": "Details"
+  },
+  {
+   "fieldname": "total_sum_insured",
+   "fieldtype": "Float",
+   "label": "Total SUM Insured"
+  },
+  {
+   "fieldname": "final_total_premium",
+   "fieldtype": "Float",
+   "label": "Final Total Premium"
+  },
+  {
+   "fieldname": "section_break_rptk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "reminder_1",
+   "fieldtype": "Check",
+   "label": "Reminder 1"
+  },
+  {
+   "default": "10",
+   "depends_on": "reminder_1",
+   "fieldname": "reminder1_before_days",
+   "fieldtype": "Int",
+   "label": "Reminder1 Before Days",
+   "reqd": 1
+  },
+  {
+   "default": "5",
+   "depends_on": "reminder_2",
+   "fieldname": "reminder2_before_days",
+   "fieldtype": "Int",
+   "label": "Reminder2 Before Days",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "reminder_3",
+   "fieldtype": "Check",
+   "label": "Reminder 3"
+  },
+  {
+   "default": "2",
+   "depends_on": "reminder_3",
+   "fieldname": "reminder3_before_days",
+   "fieldtype": "Int",
+   "label": "Reminder3 Before Days",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "renew",
+   "fieldtype": "Check",
+   "label": "Renew"
+  },
+  {
+   "fieldname": "column_break_8k7p",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "reminder_2",
+   "fieldtype": "Check",
+   "label": "Reminder 2"
+  },
+  {
+   "fieldname": "period_to",
+   "fieldtype": "Date",
+   "label": "Period To",
+   "reqd": 1
+  },
+  {
+   "fieldname": "period_from",
+   "fieldtype": "Date",
+   "label": "Period From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "insurance_types",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Insurance Types",
+   "options": "\nFire Insurance\nBurglary Insurance\nMarine Insurance\nECGC Insurance\nGHI\nGPA\nWorkmen compensation\nErection Policy\nCar Insurance\nLiability Policy",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-20 13:40:59.595166",
+ "modified_by": "Administrator",
+ "module": "Insurance",
+ "name": "Policy",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

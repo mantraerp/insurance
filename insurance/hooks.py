@@ -148,23 +148,23 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"insurance.tasks.all"
-# 	],
-# 	"daily": [
-# 		"insurance.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"insurance.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"insurance.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"insurance.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	# "all": [
+	# 	"insurance.tasks.all"
+	# ],
+	"daily": [
+        "insurance.insurance.doctype.policy.policy.check_and_send_reminders"
+    ],
+	# "hourly": [
+	# 	"insurance.tasks.hourly"
+	# ],
+	# "weekly": [
+	# 	"insurance.tasks.weekly"
+	# ],
+	# "monthly": [
+	# 	"insurance.tasks.monthly"
+	# ],
+}
 
 # Testing
 # -------
